@@ -101,6 +101,6 @@ def manhatten(a, b):
 largest = 0
 for i, _ in positions.values():
     for j, _ in positions.values():
-        largest = max(manhatten(i, j))
+        largest = max(largest, manhatten(i, j))
 
 print(largest)

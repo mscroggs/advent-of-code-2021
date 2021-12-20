@@ -95,9 +95,12 @@ while len(positions) < len(data):
             continue
         break
 
-beacons = set()
-for i, (c, f) in positions.items():
-    for p in data[i]:
-        beacons.add(add(c, rotate(p, f)))
+def manhatten(a, b):
+    return sum(abs(i - j) for i, j in zip(a, b))
 
-print(len(beacons))
+largest = 0
+for i, _ in positions.values():
+    for j, _ in positions.values():
+        largest = max(manhatten(i, j))
+
+print(largest)
